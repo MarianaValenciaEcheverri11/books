@@ -10,7 +10,7 @@ import SwiftUI
 struct Toast: ViewModifier {
     
     struct Constants {
-        static let short: TimeInterval = 2
+        static let timeInterval: TimeInterval = 2
         static let paddingText: CGFloat = 8
         static let horizontalPadding: CGFloat = 16
         static let fontSizeTitle: CGFloat = 15
@@ -37,7 +37,7 @@ struct Toast: ViewModifier {
                     isShowing = false
                 }
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + Constants.short) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + Constants.timeInterval) {
                         isShowing = false
                     }
                 }
